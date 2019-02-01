@@ -3,6 +3,8 @@
 	src: url('../fonts/wisdom-script.otf') format('opentype');
 }
 
+/***** BASE STYLES *******/
+
 html {
 	font-size: 16px;
 }
@@ -13,11 +15,17 @@ body {
 	justify-content: center;
 	align-items: center;
 	font-size: 1em;
+	flex-flow: row wrap;
 }
 
 .container{
 	max-width: 1200px;
+	width: 90%;
 	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
 }
 
 h1,
@@ -30,44 +38,49 @@ h4 {
 }
 
 h1 {
-	font-size: 30px;
+	font-size: 1.875em;
 }
 h2 {
-    font-size: 24px;
+	font-size: 1.5em;
 }
 h3 {
-	font-size: 18px;
+	font-size: 1.125em;
 }
 h4 {
-	font-size: 12px;
-}
-
-p {
-	font-size: 14px;
-	line-height: 21px;
-    padding: 0 30px;
+	font-size: 1em;
 }
 
 /*The widths are in a percentage!*/
-header {
-	height: 110px;
-	border-bottom: 3px solid #77a466;
+.header {
+	height: auto;
 	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+	width: 100%;
+}
+
+.title {
+	margin: 0;
+	padding-top: 1em;
+	width: 100%;
+	text-align: center;
+	border-bottom: 3px solid #77a466;
 }
 
 header h1 {
-	float: left;
-	margin: 0;
-	padding: 38px 0;
+	padding-bottom: .5em;
 }
+
 header h1 span {
 	color: #77a466;
 }
 
-header nav {
-	float: right;
-	padding: 46px 0;
+.navbar {
+	padding: .8em 0;
 }
+
 header nav ul {
 	margin: 0;
 	padding: 0;
@@ -75,9 +88,10 @@ header nav ul {
 header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 14px;
-	padding: 0 10px;
-	display: inline;
+	font-size: 1em;
+	padding: 1em 0;
+	display: block;
+	text-align: center;
 }
 header nav ul li a{
 	text-decoration: none;
@@ -89,6 +103,10 @@ header nav ul li a{
 .bottom-section {
 	margin: 0 auto;
 	clear: both;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
 }
 
 .main-image {
@@ -97,12 +115,12 @@ header nav ul li a{
 }
 .main-image img {
 	width: 100%;
+	border-top: 3px solid #77a466;
 	border-bottom: 3px solid #77a466;
 }
 
 .main-title {
 	height: auto;
-	float: left;
 }
 .main-title h3 {
 	text-align: left;
@@ -111,31 +129,26 @@ header nav ul li a{
 }
 .main-title p {
 	padding: 0;
-	font-size: 16px;
-	line-height: 25px;
+	font-size: 1.1em;
+	line-height: 1.8em;
 }
 
 .section-one,
 .section-two,
 .section-three {
-	width: 33%;
+	width: 100%;
 	height: auto;
-	float: left;
 	border-top: 1px solid #eee;
 }
 
-.section-one h4 {
-	padding: 10px 0;
+.section-three {
+	padding-bottom: .5em;
 }
 
-.section-two {
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
-}
-
+.section-one h4,
 .section-two h4,
 .section-three h4 {
-	padding: 10px 30px;
+	padding: 10px 0;
 }
 
 .menu {
@@ -161,11 +174,16 @@ header nav ul li a{
 /*The widths are in a percentage!*/
 footer {
 	height: 50px;
+	width: 100%;
 	border-top: 3px solid #eee;
 	margin: 0 auto;
 	clear: both;
 	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+
 footer span {
 	font-family: 'Wisdom Script', cursive;
 	text-transform: lowercase;
@@ -173,20 +191,93 @@ footer span {
 	font-size: 14px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
 
-	h1 {
-	font-size: 1.875em;
+	.bottom-section {
+		align-items: flex-start;
 	}
-	h2 {
-    font-size: 1.5em;
+
+	.section-one,
+	.section-two,
+	.section-three {
+		width: 33%;
+		border-top: 1px solid #eee;
+		padding-bottom: 1em;
 	}
-	h3 {
-	font-size: 1.125em;
+
+	.section-one h4 {
+		padding: 10px 0;
 	}
-	h4 {
-	font-size: 0.75em;
+
+	.section-two {
+		border-left: 1px solid #eee;
+		border-right: 1px solid #eee;
+	}
+
+	.section-two h4,
+	.section-three h4 {
+		padding: 10px 30px;
+	}
+
+	.section-two p,
+	.section-three p {
+		padding: 0 30px;
 	}
 }
 
+@media (min-width: 1200px) {
+
+	h4 {
+		font-size: 0.75em;
+	}
+
+	.header {
+		height: 110px;
+		border-bottom: 3px solid #77a466;
+		flex-flow: row nowrap;
+	}
+
+	.title {
+		display: flex;
+		justify-content: flex-start;
+		margin: 0;
+		padding: 38px 0;
+		border-bottom: none;
+	}
+
+	.navbar {
+		display: flex;
+		justify-content: flex-end;
+		padding: 46px 0;
+	}
+	header nav ul {
+		display: flex;
+		justify-content: space-between;
+	}
+	header nav ul li {
+		font-size: 0.875em;
+		padding: 0 10px;
+		display: inline;
+	}
+
+	.main-image img {
+		border-top: none;
+	}
+
+	.main-title {
+		float: left;
+	}
+
+	.main-title p {
+		padding: 0;
+		font-size: 1em;
+		line-height: 1.5625em;
+	}
+
+	.section-one,
+	.section-two,
+	.section-three {
+		height: 200px;
+	}
+}
 
