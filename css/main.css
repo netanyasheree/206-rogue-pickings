@@ -50,7 +50,6 @@ h4 {
 
 /* HEADER STYLES */
 .header {
-	height: auto;
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
@@ -106,18 +105,12 @@ header nav ul li a{
 	flex-flow: row wrap;
 }
 
-.main-image {
-	height: auto;
-}
 .main-image img {
 	width: 100%;
 	border-top: 3px solid #77a466;
 	border-bottom: 3px solid #77a466;
 }
 
-.main-title {
-	height: auto;
-}
 .main-title h3 {
 	text-align: left;
 	padding: 5px 0;
@@ -133,7 +126,6 @@ header nav ul li a{
 .section-two,
 .section-three {
 	width: 100%;
-	height: auto;
 	border-top: 1px solid #eee;
 }
 
@@ -169,7 +161,6 @@ header nav ul li a{
 
 /* FOOTER STYLES */
 footer {
-	height: auto;
 	width: 100%;
 	border-top: 3px solid #eee;
 	margin: 0 auto;
@@ -229,7 +220,6 @@ footer span {
 	}
 
 	.header {
-		height: auto;
 		border-bottom: 3px solid #77a466;
 		flex-flow: row nowrap;
 	}
